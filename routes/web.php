@@ -51,10 +51,16 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
+    Route::get('place/find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
     Route::get('find/getPlaces/{id}', [App\Http\Controllers\InstrumentController::class, 'getPlacesByRooms']);
 
+    Route::post('place/create', [App\Http\Controllers\PlaceController::class, 'store']);
 
     Route::post('find/take', [App\Http\Controllers\InstrumentController::class, 'changePlace']);
+
+
+    Route::get('place', [App\Http\Controllers\PlaceController::class, 'index']);
+    Route::get('place/create', [App\Http\Controllers\PlaceController::class, 'create']);
 
 
     Route::controller(SearchController::class)->group(function () {

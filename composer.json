@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
+        "livewire/livewire": "^2.12",
         "milon/barcode": "^10.0",
         "rawilk/laravel-printing": "^3.0",
         "yoeunes/toastr": "^2.3"
