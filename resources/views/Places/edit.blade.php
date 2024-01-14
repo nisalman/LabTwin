@@ -1,4 +1,4 @@
-<?php
+
 @extends('layouts.app')
 @section('content')
 
@@ -19,46 +19,12 @@
                         <h4 class="font-20 mb-4">Base Control</h4>
 
                         <!-- Form -->
-                        <form action="/instrument-create" method="POST" >
+                        <form action="/place/update" method="POST">
                             @csrf
                             <!-- Form Group -->
                             <div class="form-group mb-4">
                                 <label for="name" class="mb-2 black bold">Name</label>
-                                <input type="text" class="theme-input-style" name="name" placeholder="Type Name">
-                            </div>
-                            <!-- End Form Group -->
-
-                            <!-- Form Group -->
-                            <div class="form-group mb-4">
-                                <label for="code" class="mb-2 black bold">Code</label>
-                                <input type="text" class="theme-input-style" name="code" placeholder="Type Code">
-                            </div>
-                            <!-- End Form Group -->
-                            <!-- Form Group -->
-                            <div class="form-group mb-4">
-                                <label for="in" class="mb-2 black bold">Inventory Number</label>
-                                <input type="text" class="theme-input-style" name="in"
-                                       placeholder="Type Inventory Number">
-                            </div>
-                            <!-- End Form Group -->
-                            <!-- Form Group -->
-                            <div class="form-group mb-4">
-                                <label for="dr" class="mb-2 black bold">Digital resource</label>
-                                <input type="text" class="theme-input-style" name="dr"
-                                       placeholder="Type Digital resource">
-                            </div>
-                            <!-- End Form Group -->
-                            <!-- Form Group -->
-                            <div class="form-group mb-4">
-                                <label class="mb-2 black bold">Calibration Date</label>
-                                <!-- Date Picker -->
-
-
-                                <div class="date datepicker dashboard-date style--three" id="datePickerExample">
-                                    <span class="input-group-addon mr-0"><img src="{{asset('admin/img/svg/calender.svg')}}" alt="" class="svg"></span>
-                                    <input type="text" name="default_date" placeholder="{{\Carbon\Carbon::now()}}"/>
-                                </div>
-                                <!-- End Date Picker -->
+                                <input type="text" class="theme-input-style" name="name" value="{{$place->name}}" placeholder="Type Name">
                             </div>
                             <!-- End Form Group -->
 
@@ -71,7 +37,7 @@
                                             <select class="theme-input-style" id="exampleSelect3" name="building_id">
                                                 <option value="0">Select Building</option>
                                                 @foreach($buildings as $building)
-                                                    <option value="{{$building->id}}"> {{$building->name}} </option>
+                                                    <option {{$building->id == $place->room->building->id ? 'selected' : '' }} value="{{ $building->id }}">{{ $building->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -81,38 +47,18 @@
                                     <div class="form-group mb-4">
                                         <label for="exampleSelect3" class="mb-2 black bold d-block">Room</label>
                                         <div class="custom-select style--two">
-                                            <select class="theme-input-style" name="room_id">
-                                                <option value="0">Select Room</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4">
-                                    <div class="form-group mb-4">
-                                        <label for="exampleSelect3" class="mb-2 black bold d-block">Place</label>
-                                        <div class="custom-select style--two">
-                                            <select class="theme-input-style" name="place_id">
-                                                <option value="0">Select Place</option>
+                                            <select class="theme-input-style" id="exampleSelect3" name="building_id">
+                                            <option value="0">Select Rooms</option>
+                                            @foreach($rooms as $room)
+                                                <option {{$room->id == $place->room->id ? 'selected' : '' }} value="{{ $room->id }}">{{ $room->name }}</option>
+                                            @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                            <div class="attach-file style--two mb-4">
-                                <img src="{{asset('admin/img/img-placeholder.png')}}" class="profile-avatar" alt="">
-                                <div class="upload-button">
-                                    <img src="{{asset('admin/img/svg/gallery.svg')}}" alt="" class="svg mr-2">
-                                    <span>Upload Photo</span>
-                                    <input class="file-input" type="file" name="image">
-                                </div>
 
-                            </div>
-                            <div class="content">
-                                <h4 class="mb-2">Upload a Photo</h4>
-                                <p class="font-12 c4">Allowed JPG, GIF or PNG. Max size <br /> of 800kB</p>
-                            </div>
                             <!-- Button Group -->
                             <div class="button-group pt-2">
                                 <button type="submit" class="btn long">Submit</button>
@@ -150,6 +96,7 @@
             jQuery(document).ready(function () {
                 jQuery('select[name="building_id"]').on('change', function () {
                     var buildingID = jQuery(this).val();
+                    console.log(buildingID);
                     if (buildingID) {
                         jQuery.ajax({
                             url: 'find/getRooms/' + buildingID,

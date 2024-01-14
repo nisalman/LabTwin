@@ -32,4 +32,11 @@ class RoomController extends Controller
         $room->save();
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+        $room=Room::find($id);
+         $buildings=Building::all();
+        return view('Rooms.edit', compact('room', 'buildings'));
+    }
 }

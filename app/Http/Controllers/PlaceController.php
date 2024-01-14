@@ -32,4 +32,11 @@ class PlaceController extends Controller
         $place->save();
         return redirect()->back();
     }
+    public function edit($id)
+    {
+        $place=Place::find($id);
+        $buildings=Building::all();
+        $rooms=Room::all();
+        return view('places.edit', compact('place','rooms', 'buildings'));
+    }
 }

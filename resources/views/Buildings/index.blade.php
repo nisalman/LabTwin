@@ -13,15 +13,6 @@
                                 <h4 class="font-20">Building List</h4>
 
                                 <div class="d-flex flex-wrap">
-                                    <!-- Date Picker -->
-                                    <div class="dashboard-date style--six mr-20 mt-3 mt-sm-0">
-                                               <span class="input-group-addon">
-                                                  <img src="../../assets/img/svg/calender-color.svg" alt="" class="svg">
-                                                </span>
-
-                                        <input type="text" id="default-date" value="28 October 2019"/>
-                                    </div>
-                                    <!-- End Date Picker -->
 
 
                                     <!-- Dropdown Button -->
@@ -56,8 +47,8 @@
                                     <tr>
                                         <td>{{$building->id}}</td>
                                         <td>{{$building->name}}</td>
-                                        <td><a href="invoice-details.html" class="details-btn">View Details <i
-                                                    class="icofont-arrow-right"></i></a></td>
+                                        <td><a href="/building/edit/{{$building->id}}"><button class="btn btn-sm btn-info">Edit</button></a>
+                                        <a href="/building/delete"><button style="background-color: red" class="btn btn-info">Delete</button></a></td>
                                     </tr>
                                 @endforeach
 

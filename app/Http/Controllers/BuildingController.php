@@ -26,4 +26,10 @@ class BuildingController extends Controller
         $building->save();
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+        $buildings=Building::find($id);
+        return view('buildings.edit', compact('buildings'));
+    }
 }

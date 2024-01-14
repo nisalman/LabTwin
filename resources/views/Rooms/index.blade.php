@@ -56,7 +56,8 @@
                                     <td>{{$room->id}}</td>
                                     <td>{{$room->name}}</td>
                                     <td>{{$room->building->name}}</td>
-                                    <td><a href="invoice-details.html" class="details-btn">View Details <i class="icofont-arrow-right"></i></a></td>
+                                    <td><a href="/room/edit/{{$room->id}}"><button class="btn btn-sm btn-info">Edit</button></a>
+                                        <a href="/room/delete"><button style="background-color: red" class="btn btn-info">Delete</button></a></td>
                                 </tr>
                                 @endforeach
 
