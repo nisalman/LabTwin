@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
+    Route::get('place/edit/find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
     Route::get('place/find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
     Route::get('find/getPlaces/{id}', [App\Http\Controllers\InstrumentController::class, 'getPlacesByRooms']);
 
@@ -63,6 +64,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('place/create', [App\Http\Controllers\PlaceController::class, 'create']);
     Route::post('place/store', [App\Http\Controllers\PlaceController::class, 'store']);
     Route::get('place/edit/{id}', [App\Http\Controllers\PlaceController::class, 'edit']);
+    Route::post('place/update/{id}', [App\Http\Controllers\PlaceController::class, 'update']);
     Route::get('place/delete/{id}', [App\Http\Controllers\PlaceController::class, 'delete']);
 
 
@@ -70,13 +72,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('room/create', [App\Http\Controllers\RoomController::class, 'create']);
     Route::post('room/store', [App\Http\Controllers\RoomController::class, 'store']);
     Route::get('room/edit/{id}', [App\Http\Controllers\RoomController::class, 'edit']);
+    Route::post('room/update/{id}', [App\Http\Controllers\RoomController::class, 'update']);
     Route::get('room/delete/{id}', [App\Http\Controllers\RoomController::class, 'delete']);
 
     Route::get('/building', [App\Http\Controllers\BuildingController::class, 'index']);
     Route::get('building/create', [App\Http\Controllers\BuildingController::class, 'create']);
     Route::post('building/store', [App\Http\Controllers\BuildingController::class, 'store']);
     Route::get('building/edit/{id}', [App\Http\Controllers\BuildingController::class, 'edit']);
-    Route::get('building/delete/{id}', [App\Http\Controllers\BuildingController::class, 'delete']);
+    Route::post('building/update/{id}', [App\Http\Controllers\BuildingController::class, 'update']);
+    Route::post('building/delete/{id}', [App\Http\Controllers\BuildingController::class, 'delete']);
 
 
 

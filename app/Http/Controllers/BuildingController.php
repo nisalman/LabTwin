@@ -32,4 +32,11 @@ class BuildingController extends Controller
         $buildings=Building::find($id);
         return view('buildings.edit', compact('buildings'));
     }
+    public function Update(Request $request, $id)
+    {
+        Building::where('id',$id)->update(['name'=>$request->name]);;
+        return redirect('building');
+
+    }
+
 }

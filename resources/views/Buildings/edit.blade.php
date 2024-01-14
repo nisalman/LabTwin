@@ -19,7 +19,7 @@
                         <h4 class="font-20 mb-4">Buildings</h4>
 
                         <!-- Form -->
-                        <form action="/building/update" method="POST">
+                        <form action="/building/update/{{$buildings->id}}" method="POST">
                             @csrf
                             <!-- Form Group -->
                             <div class="form-group mb-4">

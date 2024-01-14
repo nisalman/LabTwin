@@ -39,4 +39,14 @@ class RoomController extends Controller
          $buildings=Building::all();
         return view('Rooms.edit', compact('room', 'buildings'));
     }
+
+    public function Update(Request $request, $id)
+    {
+        Room::where('id',$id)->update([
+            'name'=>$request->name,
+            'building_id'=>$request->building_id,
+        ]);
+        return redirect('room');
+
+    }
 }

@@ -19,7 +19,7 @@
                         <h4 class="font-20 mb-4">Base Control</h4>
 
                         <!-- Form -->
-                        <form action="/place/update" method="POST">
+                        <form action="/place/update/{{$place->id}}" method="POST">
                             @csrf
                             <!-- Form Group -->
                             <div class="form-group mb-4">
@@ -34,7 +34,7 @@
                                     <div class="form-group mb-4">
                                         <label for="exampleSelect3" class="mb-2 black bold d-block">Building</label>
                                         <div class="custom-select style--two">
-                                            <select class="theme-input-style" id="exampleSelect3" name="building_id">
+                                            <select class="theme-input-style" id="building_id" name="building_id">
                                                 <option value="0">Select Building</option>
                                                 @foreach($buildings as $building)
                                                     <option {{$building->id == $place->room->building->id ? 'selected' : '' }} value="{{ $building->id }}">{{ $building->name }}</option>
@@ -47,11 +47,8 @@
                                     <div class="form-group mb-4">
                                         <label for="exampleSelect3" class="mb-2 black bold d-block">Room</label>
                                         <div class="custom-select style--two">
-                                            <select class="theme-input-style" id="exampleSelect3" name="building_id">
-                                            <option value="0">Select Rooms</option>
-                                            @foreach($rooms as $room)
-                                                <option {{$room->id == $place->room->id ? 'selected' : '' }} value="{{ $room->id }}">{{ $room->name }}</option>
-                                            @endforeach
+                                            <select class="theme-input-style" name="room_id">
+                                                <option value="0">Select Room</option>
                                             </select>
                                         </div>
                                     </div>
@@ -61,7 +58,7 @@
 
                             <!-- Button Group -->
                             <div class="button-group pt-2">
-                                <button type="submit" class="btn long">Submit</button>
+                                <button type="submit" class="btn long">Update</button>
                                 <button type="reset" class="link-btn bg-transparent ml-3 soft-pink">Cancel</button>
                             </div>
                             <!-- End Button Group -->

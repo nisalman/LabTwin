@@ -19,7 +19,7 @@
                         <h4 class="font-20 mb-4">Create Room</h4>
 
                         <!-- Form -->
-                        <form action="/room/update" method="POST">
+                        <form action="/room/update/{{$room->id}}" method="POST">
                             @csrf
                             <!-- Form Group -->
                             <div class="form-group mb-4">
@@ -34,12 +34,11 @@
                                     <div class="form-group mb-4">
                                         <label for="exampleSelect3" class="mb-2 black bold d-block">Building</label>
                                         <div class="custom-select style--two">
-                                            <select class="theme-input-style" id="exampleSelect3" name="building_id">
+                                            <select class="theme-input-style" id="building_id" name="building_id">
                                                 <option value="0">Select Building</option>
                                                 @foreach($buildings as $building)
                                                     <option {{$building->id == $room->building->id ? 'selected' : '' }} value="{{ $building->id }}">{{ $building->name }}</option>
                                                 @endforeach
-
                                             </select>
                                         </div>
                                     </div>
@@ -49,7 +48,7 @@
 
                             <!-- Button Group -->
                             <div class="button-group pt-2">
-                                <button type="submit" class="btn long">Submit</button>
+                                <button type="submit" class="btn long">Update</button>
                                 <button type="reset" class="link-btn bg-transparent ml-3 soft-pink">Cancel</button>
                             </div>
                             <!-- End Button Group -->

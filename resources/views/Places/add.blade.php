@@ -50,7 +50,6 @@
                                             <select class="theme-input-style" name="room_id">
                                                 <option value="0">Select Room</option>
                                             </select>
-
                                         </div>
                                     </div>
                                 </div>

@@ -39,4 +39,13 @@ class PlaceController extends Controller
         $rooms=Room::all();
         return view('places.edit', compact('place','rooms', 'buildings'));
     }
+    public function Update(Request $request, $id)
+    {
+        Place::where('id',$id)->update([
+            'name'=>$request->name,
+            'room_id'=>$request->room_id,
+        ]);
+        return redirect('place');
+
+    }
 }
