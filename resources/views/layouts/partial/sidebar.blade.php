@@ -43,9 +43,9 @@
 
                 <!-- Sub Menu -->
                 <ul class="nav sub-menu">
-                    <li><a href="#">Building</a></li>
-                    <li><a href="#">Room</a></li>
-                    <li><a href="#">Place</a></li>
+                    <li><a href="/building">Building</a></li>
+                    <li><a href="/room">Room</a></li>
+                    <li><a href="/place">Place</a></li>
                 </ul>
                 <!-- End Sub Menu -->
             </li>

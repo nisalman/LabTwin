@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FindAndGoController;
+use App\Http\Controllers\RoomController;
 
 use App\Models\Instrument;
 use App\Models\Property;
@@ -58,9 +59,19 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('find/take', [App\Http\Controllers\InstrumentController::class, 'changePlace']);
 
-
     Route::get('place', [App\Http\Controllers\PlaceController::class, 'index']);
     Route::get('place/create', [App\Http\Controllers\PlaceController::class, 'create']);
+    Route::post('place/store', [App\Http\Controllers\PlaceController::class, 'store']);
+
+
+    Route::get('/room', [App\Http\Controllers\RoomController::class, 'index']);
+    Route::get('room/create', [App\Http\Controllers\RoomController::class, 'create']);
+    Route::post('room/store', [App\Http\Controllers\RoomController::class, 'store']);
+
+    Route::get('/building', [App\Http\Controllers\BuildingController::class, 'index']);
+    Route::get('building/create', [App\Http\Controllers\BuildingController::class, 'create']);
+    Route::post('building/store', [App\Http\Controllers\BuildingController::class, 'store']);
+
 
 
     Route::controller(SearchController::class)->group(function () {

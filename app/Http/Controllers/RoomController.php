@@ -7,29 +7,29 @@ use App\Models\Place;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
-class PlaceController extends Controller
+class RoomController extends Controller
 {
     public function index()
     {
-        $places=Place::all();
+        $rooms=Room::all();
 
-        return view('places.index', compact('places'));
+        return view('rooms.index', compact('rooms'));
     }
-
     public function create()
     {
-        $places=Place::all();
         $rooms=Room::all();
         $buildings=Building::all();
-        return view('places.add', compact('places', 'rooms', 'buildings'));
+        return view('rooms.add', compact('rooms', 'buildings'));
     }
 
     public function store(Request $request)
     {
-        $place = new Place;
-        $place->name=$request->name;
-        $place->room_id=$request->room_id;
-        $place->save();
+
+        //return $request;
+        $room = new Room;
+        $room->name=$request->name;
+        $room->building_id=$request->building_id;
+        $room->save();
         return redirect()->back();
     }
 }
