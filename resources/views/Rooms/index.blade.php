@@ -14,28 +14,9 @@
                                 <h4 class="font-20">Room List</h4>
 
                                 <div class="d-flex flex-wrap">
-                                    <!-- Date Picker -->
-                                    <div class="dashboard-date style--six mr-20 mt-3 mt-sm-0">
-                                               <span class="input-group-addon">
-                                                  <img src="../../assets/img/svg/calender-color.svg" alt="" class="svg">
-                                                </span>
-
-                                        <input type="text" id="default-date" value="28 October 2019"/>
-                                    </div>
-                                    <!-- End Date Picker -->
-
-
-                                    <!-- Dropdown Button -->
                                     <div class="dropdown-button mt-3 mt-sm-0">
-                                        <button type="button" class="btn style--two orange" data-toggle="dropdown">Download <i class="icofont-simple-down"></i></button>
-
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Print</a>
-                                            <a class="dropdown-item" href="#">EXL</a>
-                                            <a class="dropdown-item" href="#">PDF</a>
-                                        </div>
+                                        <a href="/room/create"><button class="btn btn-sm btn-info"><i class="icofont-plus"></i></button></a>
                                     </div>
-                                    <!-- End Dropdown Button -->
                                 </div>
                             </div>
                         </div>
@@ -56,8 +37,8 @@
                                     <td>{{$room->id}}</td>
                                     <td>{{$room->name}}</td>
                                     <td>{{$room->building->name}}</td>
-                                    <td><a href="/room/edit/{{$room->id}}"><button class="btn btn-sm btn-info">Edit</button></a>
-                                        <a href="/room/delete"><button style="background-color: red" class="btn btn-info">Delete</button></a></td>
+                                    <td><a href="/room/edit/{{$room->id}}"><button style="background-color: #1e7e34" class="btn btn-sm btn-info"><i class="icofont-edit"></i></button></a>
+                                        <a href="/room/delete/{{$room->id}}"><button style="background-color: #ee3131" class="btn btn-info"><i class="icofont-trash"></i></button></a></td>
                                 </tr>
                                 @endforeach
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Building;
+use App\Models\Instrument;
 use App\Models\Place;
 use App\Models\Room;
 use Illuminate\Http\Request;
@@ -47,5 +48,20 @@ class PlaceController extends Controller
         ]);
         return redirect('place');
 
+    }
+    public function delete($id)
+    {
+        $place = Instrument::where('place_id', $id)->get();
+
+        if ($place->isEmpty()) {
+            Room::where('id', $id)->delete();
+            toastr()->success('Room successfully deleted', 'Success', ['positionClass' => 'toast-bottom-right']);
+            return redirect()->back();
+        }else{
+            toastr()->warning('This Place contains instruments, You need to delete corresponding instrument first!', 'Warning', ['positionClass' => 'toast-bottom-right']);
+            return redirect()->back();
+        }
+        Place::find($id)->delete();
+        return redirect()->back();
     }
 }

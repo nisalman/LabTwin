@@ -6,13 +6,14 @@ use App\Models\Building;
 use App\Models\Place;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isEmpty;
+use function PHPUnit\Framework\isFalse;
 
 class RoomController extends Controller
 {
     public function index()
     {
         $rooms=Room::all();
-
         return view('rooms.index', compact('rooms'));
     }
     public function create()
@@ -46,7 +47,19 @@ class RoomController extends Controller
             'name'=>$request->name,
             'building_id'=>$request->building_id,
         ]);
-        return redirect('room');
+        return redirect('/room');
+    }
+    public function delete($id)
+    {
+         $place = Place::where('room_id', $id)->get();
 
+         if ($place->isEmpty()) {
+            Room::where('id', $id)->delete();
+             toastr()->success('Room successfully deleted', 'Success', ['positionClass' => 'toast-bottom-right']);
+             return redirect()->back();
+        }else{
+             toastr()->warning('This Room contains places, You need to delete corresponding places first!', 'Warning', ['positionClass' => 'toast-bottom-right']);
+             return redirect()->back();
+         }
     }
 }

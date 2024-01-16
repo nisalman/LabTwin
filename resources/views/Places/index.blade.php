@@ -11,31 +11,14 @@
                     <div class="card mb-30">
                         <div class="card-body">
                             <div class="d-sm-flex justify-content-between align-items-center">
-                                <h4 class="font-20">Extended Table</h4>
+                                <h4 class="font-20">Places List</h4>
 
                                 <div class="d-flex flex-wrap">
-                                    <!-- Date Picker -->
-                                    <div class="dashboard-date style--six mr-20 mt-3 mt-sm-0">
-                                               <span class="input-group-addon">
-                                                  <img src="../../assets/img/svg/calender-color.svg" alt="" class="svg">
-                                                </span>
-
-                                        <input type="text" id="default-date" value="28 October 2019"/>
-                                    </div>
-                                    <!-- End Date Picker -->
-
-
-                                    <!-- Dropdown Button -->
                                     <div class="dropdown-button mt-3 mt-sm-0">
-                                        <button type="button" class="btn style--two orange" data-toggle="dropdown">Download <i class="icofont-simple-down"></i></button>
-
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Print</a>
-                                            <a class="dropdown-item" href="#">EXL</a>
-                                            <a class="dropdown-item" href="#">PDF</a>
-                                        </div>
+                                        <a href="/place/create"><button class="btn btn-sm btn-info"><i class="icofont-plus"></i></button></a>
                                     </div>
-                                    <!-- End Dropdown Button -->
+                                </div>
+
                                 </div>
                             </div>
                         </div>
@@ -58,8 +41,8 @@
                                     <td>{{$place->name}}</td>
                                     <td>{{$place->room->name}}</td>
                                     <td>{{$place->room->building->name}}</td>
-                                    <td><a href="/place/edit/{{$place->id}}"><button class="btn btn-sm btn-info">Edit</button></a>
-                                        <a href="/place/delete/{{$place->id}}"><button style="background-color: red" class="btn btn-info">Delete</button></a></td>
+                                    <td><a href="/place/edit/{{$place->id}}"><button style="background-color: #1e7e34" class="btn btn-sm btn-info"><i class="icofont-edit"></i></button></a>
+                                        <a href="/place/delete/{{$place->id}}"><button style="background-color: #ee3131" class="btn btn-info"><i class="icofont-trash"></i></button></a></td>
                                 </tr>
                                 @endforeach
 

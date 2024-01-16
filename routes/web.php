@@ -80,7 +80,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('building/store', [App\Http\Controllers\BuildingController::class, 'store']);
     Route::get('building/edit/{id}', [App\Http\Controllers\BuildingController::class, 'edit']);
     Route::post('building/update/{id}', [App\Http\Controllers\BuildingController::class, 'update']);
-    Route::post('building/delete/{id}', [App\Http\Controllers\BuildingController::class, 'delete']);
+    Route::get('building/delete/{id}', [App\Http\Controllers\BuildingController::class, 'delete']);
 
 
 

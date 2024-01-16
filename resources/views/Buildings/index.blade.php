@@ -13,20 +13,9 @@
                                 <h4 class="font-20">Building List</h4>
 
                                 <div class="d-flex flex-wrap">
-
-
-                                    <!-- Dropdown Button -->
                                     <div class="dropdown-button mt-3 mt-sm-0">
-                                        <button type="button" class="btn style--two orange" data-toggle="dropdown">
-                                            Download <i class="icofont-simple-down"></i></button>
-
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Print</a>
-                                            <a class="dropdown-item" href="#">EXL</a>
-                                            <a class="dropdown-item" href="#">PDF</a>
-                                        </div>
+                                        <a href="/building/create"><button class="btn btn-sm btn-info"><i class="icofont-plus"></i></button></a>
                                     </div>
-                                    <!-- End Dropdown Button -->
                                 </div>
                             </div>
                         </div>
@@ -47,8 +36,9 @@
                                     <tr>
                                         <td>{{$building->id}}</td>
                                         <td>{{$building->name}}</td>
-                                        <td><a href="/building/edit/{{$building->id}}"><button class="btn btn-sm btn-info">Edit</button></a>
-                                        <a href="/building/delete"><button style="background-color: red" class="btn btn-info">Delete</button></a></td>
+
+                                        <td><a href="/building/edit/{{$building->id}}"><button style="background-color: #1e7e34" class="btn btn-sm btn-info"><i class="icofont-edit"></i></button></a>
+                                            <a href="/building/delete/{{$building->id}}"><button style="background-color: #ee3131" class="btn btn-info"><i class="icofont-trash"></i></button></a></td>
                                     </tr>
                                 @endforeach
 
