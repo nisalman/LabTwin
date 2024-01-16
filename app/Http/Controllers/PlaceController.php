@@ -61,7 +61,6 @@ class PlaceController extends Controller
             toastr()->warning('This Place contains instruments, You need to delete corresponding instrument first!', 'Warning', ['positionClass' => 'toast-bottom-right']);
             return redirect()->back();
         }
-        Place::find($id)->delete();
-        return redirect()->back();
+
     }
 }

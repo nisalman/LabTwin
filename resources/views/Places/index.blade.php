@@ -35,9 +35,9 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($places as $place)
+                                @foreach ($places as $key=>$place)
                                 <tr>
-                                    <td>{{$place->id}}</td>
+                                    <td>{{$key+1}}</td>
                                     <td>{{$place->name}}</td>
                                     <td>{{$place->room->name}}</td>
                                     <td>{{$place->room->building->name}}</td>

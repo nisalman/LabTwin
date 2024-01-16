@@ -32,9 +32,9 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($rooms as $room)
+                                @foreach ($rooms as $key=>$room)
                                 <tr>
-                                    <td>{{$room->id}}</td>
+                                    <td>{{$key+1}}</td>
                                     <td>{{$room->name}}</td>
                                     <td>{{$room->building->name}}</td>
                                     <td><a href="/room/edit/{{$room->id}}"><button style="background-color: #1e7e34" class="btn btn-sm btn-info"><i class="icofont-edit"></i></button></a>

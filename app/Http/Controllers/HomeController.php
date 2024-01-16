@@ -63,7 +63,7 @@ class HomeController extends Controller
 
        $instrument= Instrument::find($request->iid);
        $instrumentCode = $instrument->code;
-        $numberOfCodes = $request->barcodeNumber;
+       $numberOfCodes = $request->barcodeNumber;
 
        return view('print-code',compact('instrumentCode','numberOfCodes'));
 
