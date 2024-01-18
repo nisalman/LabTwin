@@ -37,7 +37,7 @@
 
             <li>
                 <a href="#">
-                    <i class="icofont-settings"></i>
+                    <i class="icofont-settings-alt"></i>
                     <span class="link-title">Setup</span>
                 </a>
 

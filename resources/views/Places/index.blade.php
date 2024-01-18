@@ -21,16 +21,15 @@
 
                                 </div>
                             </div>
-                        </div>
                         <div class="table-responsive">
                             <!-- Invoice List Table -->
                             <table class="text-nowrap bg-white dh-table">
                                 <thead>
                                 <tr>
-                                    <th>SL No <img src="../../assets/img/svg/table-down-arrow.svg" alt="" class="svg"></th>
-                                    <th>Place <img src="../../assets/img/svg/table-down-arrow.svg" alt="" class="svg"></th>
-                                    <th>Room <img src="../../assets/img/svg/table-down-arrow.svg" alt="" class="svg"></th>
-                                    <th>Building <img src="../../assets/img/svg/table-down-arrow.svg" alt="" class="svg"></th>
+                                    <th>SL No</th>
+                                    <th>Place</th>
+                                    <th>Room</th>
+                                    <th>Building</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>

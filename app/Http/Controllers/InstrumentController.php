@@ -18,6 +18,27 @@ class InstrumentController extends Controller
 
     public function instrumentCreate(Request $request){
 
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'code' => 'required',
+            'in' => 'required',
+            'dr' => 'required',
+            'building_id' => 'required|numeric|min:0|not_in:0',
+            'room_id' => 'required|numeric|min:0|not_in:0',
+            'place_id' => 'required|numeric|min:0|not_in:0',
+        ], [
+            'name.required' => 'Name field is required.',
+            'code.required' => 'Code is required.',
+            'in.required' => 'Inventory Number is required.',
+            'dr.required' => 'Digital resource is required',
+            'building_id.required' => 'Building is required',
+            'room_id.required' => 'Room is required',
+            'place_id.required' => 'Place is required',
+        ]);
+
+
+//        return $validatedData['name'];
+
         $image = $request->file('image');
         $slug = str_slug($request->name);
         if (isset($image))
@@ -30,12 +51,12 @@ class InstrumentController extends Controller
         }
         $instrument = new Instrument();
 
-        $instrument->name = $request->name;
-        $instrument->code = $request->code;
-        $instrument->inventory_number = $request->in;
-        $instrument->digital_resource = $request->dr;
+        $instrument->name = $validatedData['name'];
+        $instrument->code = $validatedData['code'];
+        $instrument->inventory_number = $validatedData['in'];
+        $instrument->digital_resource = $validatedData['dr'];
         $instrument->calibration_date = Carbon::parse($request->default_date)->format('Y-m-d');
-        $instrument->place_id = $request->place_id;
+        $instrument->place_id = $validatedData['place_id'];
         $instrument->image = $imagename;
 
         $instrument->save();

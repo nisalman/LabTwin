@@ -1,14 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
-        <!-- ======= BEGIN PAGE LEVEL PLUGINS STYLES ======= -->
+    <!-- ======= BEGIN PAGE LEVEL PLUGINS STYLES ======= -->
 
-        <!-- ======= END BEGIN PAGE LEVEL PLUGINS STYLES ======= -->
+    <!-- ======= END BEGIN PAGE LEVEL PLUGINS STYLES ======= -->
 
     <!-- Main Content -->
     <div class="main-content d-flex justify-content-center align-items-center">
 
         <div class="container-fluid">
+
             <div class="row">
                 <div class="col-lg-3">
                 </div>
@@ -54,7 +55,8 @@
 
 
                                 <div class="date datepicker dashboard-date style--three" id="datePickerExample">
-                                    <span class="input-group-addon mr-0"><img src="{{asset('admin/img/svg/calender.svg')}}" alt="" class="svg"></span>
+                                    <span class="input-group-addon mr-0"><img
+                                            src="{{asset('admin/img/svg/calender.svg')}}" alt="" class="svg"></span>
                                     <input type="text" name="default_date" placeholder="{{\Carbon\Carbon::now()}}"/>
                                 </div>
                                 <!-- End Date Picker -->
@@ -68,10 +70,10 @@
                                         <label for="exampleSelect3" class="mb-2 black bold d-block">Building</label>
                                         <div class="custom-select style--two">
                                             <select class="theme-input-style" id="exampleSelect3" name="building_id">
-                                                    <option value="0">Select Building</option>
-                                                    @foreach($buildings as $building)
-                                                        <option value="{{$building->id}}"> {{$building->name}} </option>
-                                                    @endforeach
+                                                <option value="0">Select Building</option>
+                                                @foreach($buildings as $building)
+                                                    <option value="{{$building->id}}"> {{$building->name}} </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -110,7 +112,7 @@
                             </div>
                             <div class="content">
                                 <h4 class="mb-2">Upload a Photo</h4>
-                                <p class="font-12 c4">Allowed JPG, GIF or PNG. Max size <br /> of 800kB</p>
+                                <p class="font-12 c4">Allowed JPG, GIF or PNG. Max size <br/> of 800kB</p>
                             </div>
                             <!-- Button Group -->
                             <div class="button-group pt-2">
@@ -122,17 +124,30 @@
 
                         </form>
                         <!-- End Form -->
-{{--ssss--}}
+                        {{--ssss--}}
 
                         <!-- End Form -->
                     </div>
                     <!-- End Input Sizing -->
                 </div>
                 <div class="col-lg-3">
-                </div>
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+
             </div>
         </div>
     </div>
+
 
     <!-- End Main Content -->
     @push('body-scripts')
