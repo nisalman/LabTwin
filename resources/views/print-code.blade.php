@@ -31,7 +31,7 @@
         .print-back{
             text-align: center;
             position: fixed;
-            padding: 10px 10px 10px 20px;
+            padding: 10px 10px 10px 10px;
             bottom: 0;
             width: 100%;
         }
@@ -43,27 +43,44 @@
             .print-back{
                 display: none;
             }
-            .container {
-                width: 100%; /* Ensure the container spans the full page width */
+          /*  .container {
+                width: 100%; !* Ensure the container spans the full page width *!
+            }*/
+
+            .card {
+                margin-bottom: 20px; /* Add margin between cards */
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
             }
 
             .col-print {
-                float: left;
-                /*width: 25%; !* Adjust the width as needed for your columns *!*/
+                width: 20%; /* Set width to 20% for 5 columns in a row */
                 box-sizing: border-box;
+                padding: 10px; /* Add padding for spacing between columns */
             }
-            @page {
-                size: auto; /* You can set a specific size if needed */
-                margin: 0mm; /* Set margins to zero to remove headers and footers */
-                box-decoration-break: clone; /* Ensure content doesn't break across pages */
+
+            .product-details {
+                border: 1px solid #ccc; /* Add a border around each product detail */
+                padding: 10px;
+                text-align: center;
             }
-            img {
-                width: 600px;
+
+            .barcode img {
+                max-width: 100%;
+                height: 80px;
+                width: 200px;
+                display: block; /* Ensure the image does not affect the text layout */
+                margin: 0 auto; /* Center the image within the container */
             }
-           .pid{
-               font-size: 40px;
-               text-align: center;
-           }
+
+            .pid {
+                margin-top: 10px;
+                font-size: 14px;
+                font-weight: bold;
+            }
 
         }
 
@@ -77,7 +94,6 @@
 
                     <div class="row">
                         @for($i=0; $i < $numberOfCodes; $i++)
-
                             <div class="col-print">
                                 <div class="product-details">
                                     <div class="barcode">
@@ -91,8 +107,6 @@
 
                         @endfor
                     </div>
-
-
 
                 </div>
 
