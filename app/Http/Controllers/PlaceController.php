@@ -27,11 +27,22 @@ class PlaceController extends Controller
 
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'building_id' => 'required|numeric|min:0|not_in:0',
+            'room_id' => 'required|numeric|min:0|not_in:0',
+        ], [
+            'name.required' => 'Name field is required.',
+            'building_id.required' => 'Building is required',
+            'room_id.required' => 'Room is required',
+        ]);
+
         $place = new Place;
-        $place->name=$request->name;
-        $place->room_id=$request->room_id;
+        $place->name=$validatedData['name'];
+        $place->room_id=$validatedData['room_id'];
         $place->save();
-        return redirect()->back();
+        toastr()->success('Data has been saved successfully!', 'Success', ['positionClass' => 'toast-bottom-right']);
+        return redirect()->route('place.list');
     }
     public function edit($id)
     {
@@ -46,7 +57,8 @@ class PlaceController extends Controller
             'name'=>$request->name,
             'room_id'=>$request->room_id,
         ]);
-        return redirect('place');
+        toastr()->success('Data successfully updated', 'Success', ['positionClass' => 'toast-bottom-right']);
+        return redirect()->route('place.list');
 
     }
     public function delete($id)

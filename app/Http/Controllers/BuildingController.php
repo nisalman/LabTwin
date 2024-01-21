@@ -21,11 +21,17 @@ class BuildingController extends Controller
 
     public function store(Request $request)
     {
-        //return $request;
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ], [
+            'name.required' => 'Name field is required.',
+        ]);
+
         $building = new Building;
-        $building->name=$request->name;
+        $building->name=$validatedData['name'];
         $building->save();
-        return redirect()->back();
+        toastr()->success('Data has been saved successfully!', 'Success', ['positionClass' => 'toast-bottom-right']);
+        return redirect()->route('building.list');
     }
 
     public function edit($id)
@@ -37,7 +43,7 @@ class BuildingController extends Controller
     {
         Building::where('id',$id)->update(['name'=>$request->name]);;
         toastr()->success('Data successfully updated', 'Success', ['positionClass' => 'toast-bottom-right']);
-        return redirect('/building');
+        return redirect()->route('building.list');
 
     }
     public function delete($id)

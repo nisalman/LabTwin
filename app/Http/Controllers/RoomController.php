@@ -27,11 +27,20 @@ class RoomController extends Controller
     {
 
         //return $request;
+
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'building_id' => 'required|numeric|min:0|not_in:0',
+        ], [
+            'name.required' => 'Name field is required.',
+            'building_id.required' => 'Building is required',
+        ]);
         $room = new Room;
-        $room->name=$request->name;
-        $room->building_id=$request->building_id;
+        $room->name=$validatedData['name'];
+        $room->building_id=$validatedData['building_id'];
         $room->save();
-        return redirect()->back();
+        toastr()->success('Data successfully Added', 'Success', ['positionClass' => 'toast-bottom-right']);
+        return redirect()->route('room.list');
     }
 
     public function edit($id)
@@ -47,7 +56,8 @@ class RoomController extends Controller
             'name'=>$request->name,
             'building_id'=>$request->building_id,
         ]);
-        return redirect('/room');
+        toastr()->success('Data successfully updated', 'Success', ['positionClass' => 'toast-bottom-right']);
+        return redirect()->route('room.list');
     }
     public function delete($id)
     {

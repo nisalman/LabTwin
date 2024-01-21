@@ -1,12 +1,6 @@
-
 @extends('layouts.app')
 @section('content')
 
-    <!-- ======= BEGIN PAGE LEVEL PLUGINS STYLES ======= -->
-
-    <!-- ======= END BEGIN PAGE LEVEL PLUGINS STYLES ======= -->
-
-    <!-- Main Content -->
     <div class="main-content d-flex justify-content-center align-items-center">
 
         <div class="container-fluid">

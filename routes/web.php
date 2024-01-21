@@ -60,7 +60,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('find/take', [App\Http\Controllers\InstrumentController::class, 'changePlace']);
 
-    Route::get('place', [App\Http\Controllers\PlaceController::class, 'index']);
+    Route::get('place', [App\Http\Controllers\PlaceController::class, 'index'])->name('place.list');
     Route::get('place/create', [App\Http\Controllers\PlaceController::class, 'create']);
     Route::post('place/store', [App\Http\Controllers\PlaceController::class, 'store']);
     Route::get('place/edit/{id}', [App\Http\Controllers\PlaceController::class, 'edit']);
@@ -68,14 +68,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('place/delete/{id}', [App\Http\Controllers\PlaceController::class, 'delete']);
 
 
-    Route::get('/room', [App\Http\Controllers\RoomController::class, 'index']);
+    Route::get('/room', [App\Http\Controllers\RoomController::class, 'index'])->name('room.list');
     Route::get('room/create', [App\Http\Controllers\RoomController::class, 'create']);
     Route::post('room/store', [App\Http\Controllers\RoomController::class, 'store']);
     Route::get('room/edit/{id}', [App\Http\Controllers\RoomController::class, 'edit']);
     Route::post('room/update/{id}', [App\Http\Controllers\RoomController::class, 'update']);
     Route::get('room/delete/{id}', [App\Http\Controllers\RoomController::class, 'delete']);
 
-    Route::get('/building', [App\Http\Controllers\BuildingController::class, 'index']);
+    Route::get('/building', [App\Http\Controllers\BuildingController::class, 'index'])->name('building.list');
     Route::get('building/create', [App\Http\Controllers\BuildingController::class, 'create']);
     Route::post('building/store', [App\Http\Controllers\BuildingController::class, 'store']);
     Route::get('building/edit/{id}', [App\Http\Controllers\BuildingController::class, 'edit']);

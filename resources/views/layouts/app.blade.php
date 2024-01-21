@@ -51,6 +51,7 @@
                 @include('layouts.partial.sidebar')
                 </div>
                 <!-- Main Content -->
+                @include('layouts.partial.error')
                 @yield('content')
                 <!-- End Main Content -->
             </div>

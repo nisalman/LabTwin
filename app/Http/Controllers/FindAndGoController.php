@@ -27,7 +27,7 @@ class FindAndGoController extends Controller
                 ->orwhere('email','like','%'.$request->search.'%')->get();*/
 
 
-            $data = Instrument::where('name', 'like', '%' . $request->search . '%')
+            $data = Instrument::where('code', 'like', '%' . $request->search . '%')
                 ->get();
 
             $output = '';

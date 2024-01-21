@@ -1,22 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
-    <!-- ======= BEGIN PAGE LEVEL PLUGINS STYLES ======= -->
-
-    <!-- ======= END BEGIN PAGE LEVEL PLUGINS STYLES ======= -->
-
-    <!-- Main Content -->
     <div class="main-content d-flex justify-content-center align-items-center">
 
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-lg-3">
                 </div>
                 <div class="col-lg-6">
                     <!-- Base Control -->
                     <div class="form-element base-control mb-30">
-                        <h4 class="font-20 mb-4">Base Control</h4>
+                        <h4 class="font-20 mb-4">Instrument Add</h4>
 
                         <!-- Form -->
                         <form action="/instrument-create" method="POST" enctype="multipart/form-data">
@@ -131,19 +125,7 @@
                     <!-- End Input Sizing -->
                 </div>
                 <div class="col-lg-3">
-
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                    </div>
-
+                </div>
             </div>
         </div>
     </div>
