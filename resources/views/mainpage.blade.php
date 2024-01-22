@@ -342,7 +342,7 @@
                             <div class="row">
                                 <div class="form-group">
                                     <label for="name" class="mb-2 black bold">How many barcode will be printed</label>
-                                    <input type="text" class="theme-input-style" name="barcodeNumber">
+                                    <input type="number" class="theme-input-style" name="barcodeNumber">
                                     <input type="hidden" name="iid" value="{{$instrument->id}}">
                                 </div>
                                 <!-- End Form Group -->

@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <!-- Card -->
+                    git
                     <div class="card bg-transparent">
                         <!-- Contact Header -->
                         <div
@@ -20,10 +20,6 @@
                                 </div>
                                 {{--                                    <div id="search_list"></div>--}}
                                 <div class="col-lg-3"></div>
-
-                                <!-- End Search Form -->
-
-
                             </div>
 
 
