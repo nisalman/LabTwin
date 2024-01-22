@@ -32,81 +32,87 @@
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
     <!-- ======= END MAIN STYLES ======= -->
     <!-- Scripts -->
-{{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
+    {{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
 
     @stack('css')
 </head>
 <body>
-    <div id="app">
+<div id="app">
 
-            <!-- Offcanval Overlay -->
-            <div class="offcanvas-overlay"></div>
-            <!-- Offcanval Overlay -->
+    <!-- Offcanval Overlay -->
+    <div class="offcanvas-overlay"></div>
+    <!-- Offcanval Overlay -->
 
 
+    <div class="main-wrapper">
+        @auth
+            @include('layouts.partial.topbar')
+            <!-- Main Wrapper -->
             <div class="main-wrapper">
-                @include('layouts.partial.topbar')
-                <!-- Main Wrapper -->
-                <div class="main-wrapper">
                 @include('layouts.partial.sidebar')
-                </div>
-                <!-- Main Content -->
-                @include('layouts.partial.error')
-                @yield('content')
-                <!-- End Main Content -->
             </div>
-        @include('layouts.partial.footer')
+            <!-- Main Content -->
+            @include('layouts.partial.error')
 
+        @endauth
+
+        @yield('content')
+            <!-- End Main Content -->
+        @auth
     </div>
-    <!-- End wrapper -->
+    @include('layouts.partial.footer')
+    @endauth
 
-    <script src="{{asset('admin/js/jquery.min.js')}}"></script>
-    <script src="{{asset('admin/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('admin/js/script.js')}}"></script>
-    <script src="{{asset('admin/plugins/jquery-repeater/repeater.min.js')}}"></script>
-    <script src="{{asset('admin/plugins/jquery-repeater/custom-repeater.js')}}"></script>
-    <script src="{{asset('admin/plugins/treeview/bootstrap-treeview.min.js')}}"></script>
-    <script src="{{asset('admin/plugins/treeview/custom-treeview.js')}}"></script>
-   {{-- <script src="{{asset('admin/plugins/datepicker/datepicker.min.js')}}"></script>
-    <script src="{{asset('admin/plugins/datepicker/i18n/datepicker.en.js')}}"></script>
-    <script src="{{asset('admin/plugins/timepicker/jquery.timepicker.min.js')}}"></script>
-    <script src="{{asset('admin/plugins/datepicker/custom-form-datepicker.js')}}"></script>--}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+</div>
+<!-- End wrapper -->
+
+<script src="{{asset('admin/js/jquery.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset('admin/js/script.js')}}"></script>
+<script src="{{asset('admin/plugins/jquery-repeater/repeater.min.js')}}"></script>
+<script src="{{asset('admin/plugins/jquery-repeater/custom-repeater.js')}}"></script>
+<script src="{{asset('admin/plugins/treeview/bootstrap-treeview.min.js')}}"></script>
+<script src="{{asset('admin/plugins/treeview/custom-treeview.js')}}"></script>
+{{-- <script src="{{asset('admin/plugins/datepicker/datepicker.min.js')}}"></script>
+ <script src="{{asset('admin/plugins/datepicker/i18n/datepicker.en.js')}}"></script>
+ <script src="{{asset('admin/plugins/timepicker/jquery.timepicker.min.js')}}"></script>
+ <script src="{{asset('admin/plugins/datepicker/custom-form-datepicker.js')}}"></script>--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
 
-    <!-- ======= BEGIN GLOBAL MANDATORY SCRIPTS ======= -->
+<!-- ======= BEGIN GLOBAL MANDATORY SCRIPTS ======= -->
 
-    <!-- ======= BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
-    <script src="{{asset('assets/plugins/elevatezoom/jquery.elevateZoom-3.0.8.min.js')}}"></script>
+<!-- ======= BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
+<script src="{{asset('assets/plugins/elevatezoom/jquery.elevateZoom-3.0.8.min.js')}}"></script>
 
-    <script type="text/javascript">
-        var path = "{{ route('autocomplete') }}";
-        $('#inputName5').typeahead({
-            source: function (query, process) {
-                return $.get(path, {
-                    query: query
-                }, function (data) {
-                    return process(data);
-                });
-            }
-        });
+<script type="text/javascript">
+    var path = "{{ route('autocomplete') }}";
+    $('#inputName5').typeahead({
+        source: function (query, process) {
+            return $.get(path, {
+                query: query
+            }, function (data) {
+                return process(data);
+            });
+        }
+    });
 
-    </script>
-    <script type="text/javascript">
-        var path = "{{ route('autocomplete') }}";
-        $('#inputName6').typeahead({
-            source: function (query, process) {
-                return $.get(path, {
-                    query: query
-                }, function (data) {
-                    return process(data);
-                });
-            }
-        });
+</script>
+<script type="text/javascript">
+    var path = "{{ route('autocomplete') }}";
+    $('#inputName6').typeahead({
+        source: function (query, process) {
+            return $.get(path, {
+                query: query
+            }, function (data) {
+                return process(data);
+            });
+        }
+    });
 
-    </script>
+</script>
 
-    @stack('body-scripts')
+@stack('body-scripts')
 </body>
 </html>

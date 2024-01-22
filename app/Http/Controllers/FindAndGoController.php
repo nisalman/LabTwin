@@ -21,12 +21,6 @@ class FindAndGoController extends Controller
     {
 
         if ($request->ajax()) {
-
-            /*$data=Instrument::where('id','like','%'.$request->search.'%')
-                ->orwhere('name','like','%'.$request->search.'%')
-                ->orwhere('email','like','%'.$request->search.'%')->get();*/
-
-
             $data = Instrument::where('code', 'like', '%' . $request->search . '%')
                 ->get();
 
@@ -36,13 +30,11 @@ class FindAndGoController extends Controller
                     $output = '
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12" style=" margin: auto;
                         margin-top: 5%; width: 50%; padding: 10px;">
-                                    <!-- Product Grid Item -->
+
                                     <div class="product-grid-item mb-30">
                                     <a href="' . url('find/' . $row->id) . '">
                                         <div class="product-img mb-3">
-
-                                                <img src="' . url('uploads/instruments/'.$row->image) . '" class="w-100" alt="">
-
+                                           <img src="' . url('uploads/instruments/' . $row->image) . '" class="w-100" alt="">
                                         </div>
                                         <div class="product-content">
                                             <h6 class="mb-10">' . $row->code . '</h6>

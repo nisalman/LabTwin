@@ -17,10 +17,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /**
      * Show the application dashboard.
@@ -55,7 +55,7 @@ class HomeController extends Controller
         $buildings=Building::all();
 
 
-        return view('mainpage', compact('instrument','users', 'userCount', 'buildings', 'location', 'IId'));
+        return view('mainpage', compact('instrument', 'buildings', 'location', 'IId'));
     }
 
     public function generateBarCode(Request $request)

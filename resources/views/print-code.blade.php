@@ -67,8 +67,14 @@
             .print-back {
                 display: none;
             }
-        }
 
+        }
+        /* Hide buttons during print */
+        @media print {
+            button {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>

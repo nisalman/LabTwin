@@ -28,37 +28,36 @@ use App\Models\Place;
 |
 */
 
+Auth::routes();
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
+
+Route::get('/find', [App\Http\Controllers\FindAndGoController::class, 'index'])->name('indexPage');
+Route::get('/find/{id}', [App\Http\Controllers\HomeController::class, 'main'])->name('main');
+Route::post('find/take', [App\Http\Controllers\InstrumentController::class, 'changePlace']);
+Route::get('find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
+Route::get('place/edit/find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
+Route::get('place/find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
+Route::get('find/getPlaces/{id}', [App\Http\Controllers\InstrumentController::class, 'getPlacesByRooms']);
+Route::get('/search', [App\Http\Controllers\FindAndGoController::class, 'getSearch'])->name('getSearch');
+Route::get('/testSearch', [App\Http\Controllers\FindAndGoController::class, 'testSearch'])->name('testSearch');
+Route::get('/keysight', [App\Http\Controllers\HomeController::class, 'keysight'])->name('keysight');
+Route::post('/find/barcodeNumber', [App\Http\Controllers\HomeController::class, 'generateBarCode'])->name('generateBarCode');
+Route::get('/home', [App\Http\Controllers\FindAndGoController::class, 'index'])->name('indexPage');
+
+Route::controller(SearchController::class)->group(function () {
+    Route::get('demo-search', 'index');
+    Route::get('autocomplete', 'autocomplete')->name('autocomplete');
+});
+
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/home', [App\Http\Controllers\FindAndGoController::class, 'index'])->name('indexPage');
-    Route::get('/keysight', [App\Http\Controllers\HomeController::class, 'keysight'])->name('keysight');
-    Route::get('/main', [App\Http\Controllers\HomeController::class, 'main'])->name('main');
-
-    Route::get('/find/{id}', [App\Http\Controllers\HomeController::class, 'main'])->name('main');
-
-    Route::get('/find', [App\Http\Controllers\FindAndGoController::class, 'index'])->name('indexPage');
-
-    Route::get('/search', [App\Http\Controllers\FindAndGoController::class, 'getSearch'])->name('getSearch');
-    Route::get('/testSearch', [App\Http\Controllers\FindAndGoController::class, 'testSearch'])->name('testSearch');
 
     Route::get('/add-instrument', [App\Http\Controllers\InstrumentController::class, 'create'])->name('instrument.create');
     Route::post('/instrument-create', [App\Http\Controllers\InstrumentController::class, 'instrumentCreate'])->name('instrument.instrumentCreate');
-    Route::post('/find/barcodeNumber', [App\Http\Controllers\HomeController::class, 'generateBarCode'])->name('generateBarCode');
 
-
-    Route::get('find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
-    Route::get('place/edit/find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
-    Route::get('place/find/getRooms/{id}', [App\Http\Controllers\InstrumentController::class, 'getRoomsByBuildings']);
-    Route::get('find/getPlaces/{id}', [App\Http\Controllers\InstrumentController::class, 'getPlacesByRooms']);
-
-    Route::post('place/create', [App\Http\Controllers\PlaceController::class, 'store']);
-
-    Route::post('find/take', [App\Http\Controllers\InstrumentController::class, 'changePlace']);
 
     Route::get('place', [App\Http\Controllers\PlaceController::class, 'index'])->name('place.list');
     Route::get('place/create', [App\Http\Controllers\PlaceController::class, 'create']);
@@ -82,18 +81,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('building/update/{id}', [App\Http\Controllers\BuildingController::class, 'update']);
     Route::get('building/delete/{id}', [App\Http\Controllers\BuildingController::class, 'delete']);
 
-
-
-    Route::controller(SearchController::class)->group(function () {
-        Route::get('demo-search', 'index');
-        Route::get('autocomplete', 'autocomplete')->name('autocomplete');
-    });
 });
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
-
-Route::get('/test', function () {
-    return $ins = Place::find(1)->room->building;
-    return $ins->relate;
-    return view('welcome');
-});
