@@ -311,10 +311,11 @@
 
                         </div>
                         <!-- End Modal Body -->
-
                         <div class="modal-footer border-top-0 pt-10">
-                            <button class="btn btn-light btn-sm" type="submit">Confirm</button>
+                            <button style="background-color: #ff1b1b" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                            <button class="btn btn-light btn-sm" id="change-place" type="submit">Confirm</button>
                         </div>
+
                     </form>
                 </div>
             </div>

@@ -15,45 +15,37 @@
                         <!-- Form -->
                         <form action="/instrument-create" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <!-- Form Group -->
+                            <!-- Name -->
                             <div class="form-group mb-4">
                                 <label for="name" class="mb-2 black bold">Name</label>
-                                <input type="text" class="theme-input-style" name="name" placeholder="Type Name">
+                                <input type="text" class="theme-input-style" name="name" placeholder="Type Name" value="{{ old('name') }}">
                             </div>
-                            <!-- End Form Group -->
 
-                            <!-- Form Group -->
+                            <!-- Code -->
                             <div class="form-group mb-4">
                                 <label for="code" class="mb-2 black bold">Code</label>
-                                <input type="text" class="theme-input-style" name="code" placeholder="Type Code">
+                                <input type="text" class="theme-input-style" name="code" placeholder="Type Code" value="{{ old('code') }}">
                             </div>
-                            <!-- End Form Group -->
-                            <!-- Form Group -->
+
+                            <!-- Inventory Number -->
                             <div class="form-group mb-4">
                                 <label for="in" class="mb-2 black bold">Inventory Number</label>
-                                <input type="text" class="theme-input-style" name="in"
-                                       placeholder="Type Inventory Number">
+                                <input type="text" class="theme-input-style" name="in" placeholder="Type Inventory Number" value="{{ old('in') }}">
                             </div>
-                            <!-- End Form Group -->
-                            <!-- Form Group -->
+
+                            <!-- Digital Resource -->
                             <div class="form-group mb-4">
                                 <label for="dr" class="mb-2 black bold">Digital resource</label>
-                                <input type="text" class="theme-input-style" name="dr"
-                                       placeholder="Type Digital resource">
+                                <input type="text" class="theme-input-style" name="dr" placeholder="Type Digital resource" value="{{ old('dr') }}">
                             </div>
-                            <!-- End Form Group -->
-                            <!-- Form Group -->
+
+                            <!-- Calibration Date -->
                             <div class="form-group mb-4">
                                 <label class="mb-2 black bold">Calibration Date</label>
-                                <!-- Date Picker -->
-
-
                                 <div class="date datepicker dashboard-date style--three" id="datePickerExample">
-                                    <span class="input-group-addon mr-0"><img
-                                            src="{{asset('admin/img/svg/calender.svg')}}" alt="" class="svg"></span>
-                                    <input type="text" name="default_date" placeholder="{{\Carbon\Carbon::now()}}"/>
+                                    <span class="input-group-addon mr-0"><img src="{{asset('admin/img/svg/calender.svg')}}" alt="" class="svg"></span>
+                                    <input type="text" name="default_date" placeholder="{{\Carbon\Carbon::now()}}" value="{{ old('default_date') }}"/>
                                 </div>
-                                <!-- End Date Picker -->
                             </div>
                             <!-- End Form Group -->
 
@@ -96,13 +88,12 @@
 
                             </div>
                             <div class="attach-file style--two mb-4">
-                                <img src="{{asset('admin/img/img-placeholder.png')}}" class="profile-avatar" alt="">
+                                <img id="image-preview" src="{{ old('image', asset('admin/img/img-placeholder.png')) }}" class="profile-avatar" alt="">
                                 <div class="upload-button">
                                     <img src="{{asset('admin/img/svg/gallery.svg')}}" alt="" class="svg mr-2">
                                     <span>Upload Photo</span>
-                                    <input class="file-input" type="file" name="image">
+                                    <input class="file-input" type="file" name="image" onchange="previewImage(this)">
                                 </div>
-
                             </div>
                             <div class="content">
                                 <h4 class="mb-2">Upload a Photo</h4>
@@ -186,6 +177,22 @@
                     }
                 });
             });
+
+            function previewImage(input) {
+                var preview = document.getElementById('image-preview');
+                var file = input.files[0];
+                var reader = new FileReader();
+
+                reader.onloadend = function () {
+                    preview.src = reader.result;
+                }
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.src = "{{ asset('admin/img/img-placeholder.png') }}";
+                }
+            }
         </script>
     @endpush
 @endsection

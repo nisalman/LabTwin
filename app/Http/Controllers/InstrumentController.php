@@ -8,6 +8,7 @@ use App\Models\Place;
 use App\Models\Room;
 use Illuminate\Http\Request;
 Use Carbon\Carbon;
+use function PHPUnit\Framework\isEmpty;
 
 class InstrumentController extends Controller
 {
@@ -74,10 +75,23 @@ class InstrumentController extends Controller
 
     public function changePlace(Request $request)
     {
+
+        $validatedData = $request->validate([
+            'building_id' => 'required|min:0|not_in:0',
+            'room_id' => 'required|numeric|not_in:0',
+            'place_id' => 'required|numeric|not_in:0',
+        ], [
+            'building_id.required' => 'Building is required',
+            'room_id.required' => 'Room is required',
+            'place_id.required' => 'Select a place',
+        ]);
+
         Instrument::where('id', $request->bId)
             ->update([
-                'place_id' => $request->place_id,
+                'place_id' => $validatedData['place_id']
             ]);
+
+        toastr()->success('Place has been changed', 'Success', ['positionClass' => 'toast-bottom-right']);
         return redirect()->back();
     }
 

@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    git
+
                     <div class="card bg-transparent">
                         <!-- Contact Header -->
                         <div

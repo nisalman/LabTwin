@@ -40,6 +40,7 @@ class HomeController extends Controller
 
     public function main($id)
     {
+
         $instrument= Instrument::find($id);
 
         $placeID= Instrument::find($id)->place_id;
