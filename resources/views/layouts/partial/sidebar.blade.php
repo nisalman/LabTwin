@@ -46,6 +46,7 @@
                     <li><a href="/building">Building</a></li>
                     <li><a href="/room">Room</a></li>
                     <li><a href="/place">Place</a></li>
+                    <li><a href="/users">Users</a></li>
                 </ul>
                 <!-- End Sub Menu -->
             </li>

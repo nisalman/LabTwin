@@ -85,10 +85,6 @@ jQuery(document).ready(function () {
 });
 
 
-
-
-
-
 $('#barCodeNum').submit(function (e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -101,11 +97,11 @@ $('#barCodeNum').submit(function (e) {
         contentType: false,
         success: function (data) {
             console.log(data.instrumentCode);
-            // Handle success, e.g., show a success message to the user
+            // Handle success, e.g., show a success message to the Users
         },
         error: function (error) {
             console.log(error.responseJSON);
-            // Handle errors, e.g., display error messages to the user
+            // Handle errors, e.g., display error messages to the Users
         }
     });
 });

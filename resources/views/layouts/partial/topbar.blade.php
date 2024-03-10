@@ -26,28 +26,21 @@
                                 <div class="user-profile d-xl-flex align-items-center d-none">
                                     <!-- User Avatar -->
                                     <div class="user-avatar">
-                                        <img src="{{asset('admin/img/avatar/user.png')}}" alt="">
+                                        <img src="{{asset('uploads/profile/'.\Illuminate\Support\Facades\Auth::user()->image)}}"
+                                             alt="">
                                     </div>
                                     <!-- End User Avatar -->
-
-                                    <!-- User Info -->
-                                    {{--<div class="user-info">
-                                        <h4 class="user-name">{{$user->name}}</h4>
-                                        <p class="user-email">{{$user->email}}</p>
-                                    </div>--}}
-                                    <!-- End User Info -->
                                 </div>
                             </a>
                             <div class="dropdown-menu">
-                                <a href="#">My Profile</a>
+                                <a href="{{route('user.profile')}}">My Profile</a>
                                 <a href="#">Settings</a>
 
-{{--
-                                <button type="button" class="btn btn-primary">Logout</button>
---}}
                                 <form method="GET" action="{{ route('logout') }}">
                                     @csrf
-                                    <a href="#"><button style="color: green" type="submit">Logout</button></a>
+                                    <a href="#">
+                                        <button style="color: green" type="submit">Logout</button>
+                                    </a>
                                 </form>
 
                             </div>
@@ -82,7 +75,6 @@
                                 <!-- End Main Header Time -->
                             </li>
 
-
                             <li class="order-2 order-sm-0">
                                 <!-- Main Header Search -->
                                 <div class="main-header-search">
@@ -90,14 +82,14 @@
                                         <div class="theme-input-group header-search">
                                             <input type="text" class="theme-input-style" placeholder="Search Here">
 
-                                            <button type="submit"><img src="{{asset('admin/img/svg/search-icon.svg')}}" alt=""
+                                            <button type="submit"><img src="{{asset('admin/img/svg/search-icon.svg')}}"
+                                                                       alt=""
                                                                        class="svg"></button>
                                         </div>
                                     </form>
                                 </div>
                                 <!-- End Main Header Search -->
                             </li>
-
 
                         </ul>
                     </div>

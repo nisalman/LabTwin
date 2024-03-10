@@ -24,6 +24,6 @@ $("#example-vertical").steps({
         $(this).children('.actions').remove();
     }
 });
-$('#example-vertical-t-0').prepend('<i class="icofont-user-alt-7"></i>');
+$('#example-vertical-t-0').prepend('<i class="icofont-Users-alt-7"></i>');
 $('#example-vertical-t-1').prepend('<i class="icofont-location-pin"></i>');
 $('#example-vertical-t-2').prepend('<i class="icofont-check-circled"></i>');

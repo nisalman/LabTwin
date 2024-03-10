@@ -51,7 +51,17 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
+        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        {
+            if (auth()->user()->type == 'admin') {
+                return redirect()->route('indexPage');
+            }else{
+                return redirect()->route('user.home');
+            }
+        }else{
+            return redirect()->route('login')
+                ->with('error','Email-Address And Password Are Wrong.');
+        }/*        if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
 
             return redirect()->route('indexPage');
 
@@ -60,6 +70,6 @@ class LoginController extends Controller
             return redirect()->route('login')
                 ->with('error', 'Email-Address or password are wrong.')
                 ->withInput();
-        }
+        }*/
     }
 }

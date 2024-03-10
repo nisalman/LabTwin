@@ -32,7 +32,20 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('home', compact('user'));
     }
+    public function userHome()
+    {
+        return view('userHome');
+    }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function adminHome()
+    {
+        return view('adminHome');
+    }
     public function keysight()
     {
         return view('keysight');

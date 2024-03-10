@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
@@ -34,6 +35,28 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+/*------------------------------------------
+--------------------------------------------
+All Normal Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+
+    Route::get('/userhome', [HomeController::class, 'userHome'])->name('user.home');
+});
+
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+});
+
+
+
 
 Route::get('/find', [App\Http\Controllers\FindAndGoController::class, 'index'])->name('indexPage');
 Route::get('/find/{id}', [App\Http\Controllers\HomeController::class, 'main'])->name('main');
@@ -66,7 +89,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('place/update/{id}', [App\Http\Controllers\PlaceController::class, 'update']);
     Route::get('place/delete/{id}', [App\Http\Controllers\PlaceController::class, 'delete']);
 
-
     Route::get('/room', [App\Http\Controllers\RoomController::class, 'index'])->name('room.list');
     Route::get('room/create', [App\Http\Controllers\RoomController::class, 'create']);
     Route::post('room/store', [App\Http\Controllers\RoomController::class, 'store']);
@@ -81,6 +103,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('building/update/{id}', [App\Http\Controllers\BuildingController::class, 'update']);
     Route::get('building/delete/{id}', [App\Http\Controllers\BuildingController::class, 'delete']);
 
+    Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('user.list');
+    Route::get('/user/profile/', [App\Http\Controllers\ProfileController::class, 'index'])->name('user.profile');
+    Route::get('/user/view/{id}', [App\Http\Controllers\UserController::class, 'view'])->name('user.view');
+    Route::get('user/create', [App\Http\Controllers\UserController::class, 'create'])->name('user.create');
+    Route::post('user/store', [App\Http\Controllers\UserController::class, 'store'])->name('user.store');
+    Route::get('user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+    Route::post('user/update/{id}', [App\Http\Controllers\UserController::class, 'update']);
+    Route::get('user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
 });
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 

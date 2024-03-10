@@ -124,7 +124,7 @@ $(function() {
         }),
         $("#ajax-request").on("click", function () {
             Swal.fire({
-                title: "Search for a user",
+                title: "Search for a Users",
                 input: "text",
                 confirmButtonClass: "btn long",
                 buttonsStyling: !1,

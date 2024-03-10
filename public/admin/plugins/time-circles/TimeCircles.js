@@ -787,7 +787,7 @@
                 }
             }
             else {
-                // If it's a string, but neither of the above, user screwed up.
+                // If it's a string, but neither of the above, Users screwed up.
                 this.data.total_duration = secondsIn["Years"];
                 console.error("Valid values for TimeCircles config.total_duration are either numeric, or (string) Years, Months, Days, Hours, Minutes, Auto");
             }
