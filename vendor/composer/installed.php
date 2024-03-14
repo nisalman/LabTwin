@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '3a0760654e69a49fb084cfd5129747cde447b479',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '6679226e8bc5434aa67735a5e085858cff74a218',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -92,7 +92,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/cache',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'doctrine/dbal' => array(
             'pretty_version' => '3.7.1',
@@ -101,7 +101,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/dbal',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'doctrine/deprecations' => array(
             'pretty_version' => '1.1.2',
@@ -110,7 +110,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/deprecations',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'doctrine/event-manager' => array(
             'pretty_version' => '2.0.0',
@@ -119,7 +119,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/event-manager',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
             'pretty_version' => '2.0.8',
@@ -163,6 +163,15 @@
             'reference' => 'ebaaf5be6c0286928352e054f2d5125608e5405e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../egulias/email-validator',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'encore/laravel-admin' => array(
+            'pretty_version' => 'v1.8.19',
+            'version' => '1.8.19.0',
+            'reference' => '6c292ebb5efa886fa4776d86e975180608505946',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../encore/laravel-admin',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -439,6 +448,15 @@
                 0 => 'v9.52.16',
             ),
         ),
+        'jxlwqq/quill' => array(
+            'pretty_version' => '1.0.4',
+            'version' => '1.0.4.0',
+            'reference' => 'be5ab91840f25dfee4db0ea5c408943930912645',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jxlwqq/quill',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -464,9 +482,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '3a0760654e69a49fb084cfd5129747cde447b479',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '6679226e8bc5434aa67735a5e085858cff74a218',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -815,7 +833,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/cache',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'psr/clock' => array(
             'pretty_version' => '1.0.0',
@@ -1202,6 +1220,15 @@
             'reference' => '7c3aff79d10325257a001fcf92d991f24fc967cf',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/dom-crawler' => array(
+            'pretty_version' => 'v5.4.35',
+            'version' => '5.4.35.0',
+            'reference' => 'e3b4806f88abf106a411847a78619a542e71de29',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/dom-crawler',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

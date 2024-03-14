@@ -1251,6 +1251,83 @@
             "install-path": "../egulias/email-validator"
         },
         {
+            "name": "encore/laravel-admin",
+            "version": "v1.8.19",
+            "version_normalized": "1.8.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/z-song/laravel-admin.git",
+                "reference": "6c292ebb5efa886fa4776d86e975180608505946"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/6c292ebb5efa886fa4776d86e975180608505946",
+                "reference": "6c292ebb5efa886fa4776d86e975180608505946",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "2.*|3.*",
+                "laravel/framework": ">=5.5",
+                "php": ">=7.0.0",
+                "symfony/dom-crawler": "~3.1|~4.0|~5.0"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "~1.4",
+                "intervention/image": "~2.3",
+                "laravel/browser-kit-testing": "^6.0",
+                "laravel/laravel": ">=5.5",
+                "spatie/phpunit-watcher": "^1.22.0"
+            },
+            "suggest": {
+                "intervention/image": "Required to handling and manipulation upload images (~2.3).",
+                "spatie/eloquent-sortable": "Required to built orderable gird."
+            },
+            "time": "2022-05-24T03:49:38+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Encore\\Admin\\AdminServiceProvider"
+                    ],
+                    "aliases": {
+                        "Admin": "Encore\\Admin\\Facades\\Admin"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Encore\\Admin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "zsong",
+                    "email": "zosong@126.com"
+                }
+            ],
+            "description": "laravel admin",
+            "homepage": "https://github.com/z-song/laravel-admin",
+            "keywords": [
+                "admin",
+                "form",
+                "grid",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/z-song/laravel-admin/issues",
+                "source": "https://github.com/z-song/laravel-admin/tree/v1.8.19"
+            },
+            "install-path": "../encore/laravel-admin"
+        },
+        {
             "name": "fakerphp/faker",
             "version": "v1.23.0",
             "version_normalized": "1.23.0.0",
@@ -2004,6 +2081,65 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "install-path": "../hamcrest/hamcrest-php"
+        },
+        {
+            "name": "jxlwqq/quill",
+            "version": "1.0.4",
+            "version_normalized": "1.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-admin-extensions/quill.git",
+                "reference": "be5ab91840f25dfee4db0ea5c408943930912645"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-admin-extensions/quill/zipball/be5ab91840f25dfee4db0ea5c408943930912645",
+                "reference": "be5ab91840f25dfee4db0ea5c408943930912645",
+                "shasum": ""
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "time": "2021-12-15T10:49:17+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jxlwqq\\Quill\\QuillServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Jxlwqq\\Quill\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jxlwqq",
+                    "email": "jxlwqq@gmail.com"
+                }
+            ],
+            "description": "quill editor for laravel-admin",
+            "homepage": "https://github.com/jxlwqq/quill",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-admin-extensions/quill/issues",
+                "source": "https://github.com/laravel-admin-extensions/quill/tree/1.0.4"
+            },
+            "install-path": "../jxlwqq/quill"
         },
         {
             "name": "laravel/framework",
@@ -7523,6 +7659,84 @@
             "install-path": "../symfony/deprecation-contracts"
         },
         {
+            "name": "symfony/dom-crawler",
+            "version": "v5.4.35",
+            "version_normalized": "5.4.35.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "e3b4806f88abf106a411847a78619a542e71de29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/e3b4806f88abf106a411847a78619a542e71de29",
+                "reference": "e3b4806f88abf106a411847a78619a542e71de29",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1|^3",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "conflict": {
+                "masterminds/html5": "<2.6"
+            },
+            "require-dev": {
+                "masterminds/html5": "^2.6",
+                "symfony/css-selector": "^4.4|^5.0|^6.0"
+            },
+            "suggest": {
+                "symfony/css-selector": ""
+            },
+            "time": "2024-01-23T13:51:25+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DomCrawler\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Eases DOM navigation for HTML and XML documents",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/dom-crawler/tree/v5.4.35"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/dom-crawler"
+        },
+        {
             "name": "symfony/error-handler",
             "version": "v6.3.5",
             "version_normalized": "6.3.5.0",
@@ -10151,10 +10365,6 @@
         "composer/package-versions-deprecated",
         "creativeorange/gravatar",
         "digitallyhappy/assets",
-        "doctrine/cache",
-        "doctrine/dbal",
-        "doctrine/deprecations",
-        "doctrine/event-manager",
         "doctrine/instantiator",
         "fakerphp/faker",
         "filp/whoops",
@@ -10173,7 +10383,6 @@
         "phpunit/php-timer",
         "phpunit/phpunit",
         "prologue/alerts",
-        "psr/cache",
         "sebastian/cli-parser",
         "sebastian/code-unit",
         "sebastian/code-unit-reverse-lookup",

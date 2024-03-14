@@ -32,9 +32,19 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('home', compact('user'));
     }
+
     public function userHome()
     {
         return view('userHome');
+    }
+
+    public function imp()
+    {
+        return view('impressum');
+    }
+    public function impShow(Request $request)
+    {
+        return $request;
     }
 
     /**
@@ -46,6 +56,7 @@ class HomeController extends Controller
     {
         return view('adminHome');
     }
+
     public function keysight()
     {
         return view('keysight');
@@ -54,19 +65,19 @@ class HomeController extends Controller
     public function main($id)
     {
 
-        $instrument= Instrument::find($id);
+        $instrument = Instrument::find($id);
 
-        $placeID= Instrument::find($id)->place_id;
-        $building= Place::find($placeID)->room->building->name;
-        $room= Place::find($placeID)->room->name;
-        $place=Place::find($placeID)->name;
-        $IId= $id;
+        $placeID = Instrument::find($id)->place_id;
+        $building = Place::find($placeID)->room->building->name;
+        $room = Place::find($placeID)->room->name;
+        $place = Place::find($placeID)->name;
+        $IId = $id;
 
         $location = array($building, $room, $place);
 
         $users = User::all()->take(3);
         $userCount = $users->count();
-        $buildings=Building::all();
+        $buildings = Building::all();
 
 
         return view('mainpage', compact('instrument', 'buildings', 'location', 'IId'));
@@ -75,11 +86,11 @@ class HomeController extends Controller
     public function generateBarCode(Request $request)
     {
 
-       $instrument= Instrument::find($request->iid);
-       $instrumentCode = $instrument->code;
-       $numberOfCodes = $request->barcodeNumber;
+        $instrument = Instrument::find($request->iid);
+        $instrumentCode = $instrument->code;
+        $numberOfCodes = $request->barcodeNumber;
 
-       return view('print-code',compact('instrumentCode','numberOfCodes'));
+        return view('print-code', compact('instrumentCode', 'numberOfCodes'));
 
     }
 }

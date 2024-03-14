@@ -22,7 +22,7 @@ class PlaceController extends Controller
         $places=Place::all();
         $rooms=Room::all();
         $buildings=Building::all();
-        return view('places.add', compact('places', 'rooms', 'buildings'));
+        return view('Places.add', compact('places', 'rooms', 'buildings'));
     }
 
     public function store(Request $request)
@@ -49,7 +49,7 @@ class PlaceController extends Controller
         $place=Place::find($id);
         $buildings=Building::all();
         $rooms=Room::all();
-        return view('places.edit', compact('place','rooms', 'buildings'));
+        return view('Places.edit', compact('place','rooms', 'buildings'));
     }
     public function Update(Request $request, $id)
     {

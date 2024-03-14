@@ -14,13 +14,13 @@ class RoomController extends Controller
     public function index()
     {
         $rooms=Room::all();
-        return view('rooms.index', compact('rooms'));
+        return view('Rooms.index', compact('rooms'));
     }
     public function create()
     {
         $rooms=Room::all();
         $buildings=Building::all();
-        return view('rooms.add', compact('rooms', 'buildings'));
+        return view('Rooms.add', compact('rooms', 'buildings'));
     }
 
     public function store(Request $request)

@@ -6,6 +6,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FindAndGoController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\ImpressumController;
 
 use App\Models\Instrument;
 use App\Models\Property;
@@ -13,10 +14,11 @@ use App\Models\User;
 use App\Models\Relate;
 use App\Models\InstrumentProperty;
 
-
 use App\Models\Room;
 use App\Models\Building;
 use App\Models\Place;
+
+use App\Models\Impressum;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,5 +114,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('user/update/{id}', [App\Http\Controllers\UserController::class, 'update']);
     Route::get('user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
 });
+
+//impressum_routes
+Route::get('/imprint', [ImpressumController::class, 'view'])->name('impressum.index');
+Route::get('/setting/impressum', [ImpressumController::class, 'index']);
+Route::get('/setting/impressum/edit', [ImpressumController::class, 'edit'])->name('impressum.setting.edit');
+Route::post('/setting/impressum/update', [ImpressumController::class, 'update'])->name('impShow');
+
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 

@@ -70,7 +70,7 @@ class InstrumentController extends Controller
 //        toastr()->success('Data has been saved successfully!', 'Test', ['positionClass' => 'toast-bottom-right']);
 //        toastr()->success('Data has been saved successfully!', 'Congrats');
         $buildings = Building::all();
-        return view('add_instruments', compact('buildings'));
+        return view('add_Instruments', compact('buildings'));
     }
 
     public function changePlace(Request $request)

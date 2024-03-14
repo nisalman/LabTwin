@@ -16,7 +16,7 @@ class BuildingController extends Controller
     }
     public function create()
     {
-        return view('buildings.add');
+        return view('Buildings.add');
     }
 
     public function store(Request $request)
@@ -37,7 +37,7 @@ class BuildingController extends Controller
     public function edit($id)
     {
         $buildings=Building::find($id);
-        return view('buildings.edit', compact('buildings'));
+        return view('Buildings.edit', compact('buildings'));
     }
     public function Update(Request $request, $id)
     {

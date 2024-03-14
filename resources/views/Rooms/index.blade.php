@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
+@push('css')
+    <style>
 
+    </style>
+@endpush
 
     <div class="main-content d-flex justify-content-center align-items-center">
 

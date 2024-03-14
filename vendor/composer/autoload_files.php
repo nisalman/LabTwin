@@ -29,6 +29,7 @@ return array(
     '37a3dc5111fe8f707ab4c132ef1dbc62' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
     '3bd81c9b8fcc150b69d8b63b4d2ccf23' => $vendorDir . '/spatie/flare-client-php/src/helpers.php',
     'da91a01b5badbe5394c83814ef5982ea' => $vendorDir . '/php-flasher/flasher/helpers.php',
+    '4e8671d7be9056dcd04ddd9e8e15f9cc' => $vendorDir . '/encore/laravel-admin/src/helpers.php',
     '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     '801c31d8ed748cfa537fa45402288c95' => $vendorDir . '/psy/psysh/src/functions.php',
     '17d016dc52a631c1e74d2eb8fdd57342' => $vendorDir . '/laravel/helpers/src/helpers.php',

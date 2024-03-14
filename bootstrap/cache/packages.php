@@ -40,6 +40,24 @@
       'Assets' => 'DigitallyHappy\\Assets\\Facades\\Assets',
     ),
   ),
+  'encore/laravel-admin' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Encore\\Admin\\AdminServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Admin' => 'Encore\\Admin\\Facades\\Admin',
+    ),
+  ),
+  'jxlwqq/quill' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Jxlwqq\\Quill\\QuillServiceProvider',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 

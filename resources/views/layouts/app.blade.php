@@ -57,7 +57,7 @@
         @endauth
 
         @yield('content')
-            <!-- End Main Content -->
+        <!-- End Main Content -->
         @auth
     </div>
     @include('layouts.partial.footer')
