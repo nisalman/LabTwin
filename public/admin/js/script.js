@@ -1,9 +1,4 @@
 /*---------------------------------------------
-Template name :  Dashmin
-Version       :  1.0
-Author        :  ThemeLooks
-Author url    :  http://themelooks.com
-
 
 [Table of Content]
 
@@ -77,6 +72,7 @@ $(function () {
         body.toggleClass("sidebar-open");
         $(".offcanvas-overlay").toggleClass("active");
         //body.find(".sidebar-body .has-sub-item a").siblings('ul').removeClass('open').slideUp('fast');
+        //body.find(".sidebar-body .has-sub-item a").siblings('ul').removeClass('open').slideUp('fast');
     });
     
 
@@ -145,17 +141,20 @@ $(function () {
     }
     collapse();
 
+    // Header search bar sticked
+    // $('.theme-input-group.header-search').addClass('active');
+
     /*==================================
     04: Header Search Box
     ====================================*/
-    $(document).on('click', '.theme-input-group.header-search', function(e) {
+/*    $(document).on('click', '.theme-input-group.header-search', function(e) {
         e.preventDefault();
         e.stopPropagation();
         $(this).addClass('active');
     });
     $(document).on('click', 'body', function(e) {
         $('.theme-input-group.header-search.active').removeClass('active');
-    });
+    });*/
 
     /*==================================
     05: Changing svg 

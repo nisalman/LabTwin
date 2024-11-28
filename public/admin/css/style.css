@@ -1,78 +1,10 @@
-/*
-	*******************
-	Template name:  Dashmin
-	Version:        1.0
-	Author:         ThemeLooks
-	Author url:     http://themelooks.com
 
-	NOTE:
-	-----
-	Please DO NOT EDIT THIS CSS, you may need to use "custom.css" file for writing your custom css.
-	We may release future updates so it will overwrite this file. it's better and safer to use "custom.css".
-
-    ******** CSS INDEX ********
-    01. Base
-        1.1 Reset
-        1.2 Padding/Margin
-        1.3 color
-    02. Components
-        2.1 Common Classes
-        2.2 Animations
-        2.3 Pagination
-        2.4 Buttons
-        2.5 Table
-        2.6 Progress
-        2.7 Input
-    03. Layout
-        3.1 Header
-        3.2 Sidebar
-        3.3 Footer
-        3.4 Main Content
-        3.5 Aside
-    04. Dashboard
-        4.1 Dashboard
-        4.2 Social Analytics
-    05. Ecommerce
-        5.1 Ecommerce1
-        5.2 Ecommerce2
-        5.3 Product Details
-        5.4 Cartlist
-    06. Apps
-        6.1 Mail
-        6.2 Chat
-        6.3 Todo List
-        6.4 Calendar
-        6.5 Invoice
-        6.6 Contact
-        6.7 Project Manager
-        6.8 File Manager
-    07. Form & Table
-        7.1 Form Elements
-        7.2 Form Wizard
-    08. UI Elements
-        8.1 Widget
-        8.2 Icons
-    09. Pages
-        9.1 FAQ
-        9.2 Price
-        9.3 Timeline
-        9.4 Account Settings
-        9.5 Authentications
-        9.6 Coming Soon
-        9.7 Miscellaneous
-        9.8 Profile
-    10. Extension
-        10.1 Extension
-
-    ********************/
-/* ************************
-   01.1: Reset
-   ********************* */
 *,
 *::before,
 *::after {
   outline: none !important;
 }
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -258,10 +190,10 @@ html, body {
 }
 
 body {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.466;
-  color: #727272;
-  background-color: #f0f0f0;
+  color: #000000;
+  background-color: #dddddd;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -314,7 +246,12 @@ body.modal-open {
 .mt-10 {
   margin-top: 10px;
 }
-
+.mb-60 {
+  margin-bottom: 100px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
 .mb-40 {
   margin-bottom: 40px;
 }
@@ -397,9 +334,9 @@ body.modal-open {
    ********************* */
 .text_color, .dashboard-date input, .comment-action-links .comment-action-link, .dropdown-menu .dropdown-body .content .main-text, .dropdown-button > a.text_color:hover, .meta-info > div span span, .light-btn, .light-btn:hover, table.style--two thead th, table.cart_table tr td:nth-child(3) input, table.invoice-list-table.style-two td:nth-child(4), table.style-two.contact-list-table td:nth-child(4), table.invoice-list-table.style-two td:nth-child(5), table.style-two.contact-list-table td:nth-child(5), table.invoice-list.style-two td:nth-child(4), table.invoice-list.style-two td:nth-child(5), table.table-contextual .details-btn, .process-bar-wrapper.style--four .process-width, .theme-input-group.style--two input, .theme-input-group.prepend input, .search-form .theme-input-group input, .search-form .theme-input-group.header-search.theme-input-group input, .mail-list-item .mail-text .msg,
 .main-mail .mail-text .msg, .mail-list-item:hover .mail-text .msg,
-.main-mail:hover .mail-text .msg, .mail-compose .form-group .cc-btns .cc-btn, .modal-body .form-group .cc-btns .cc-btn, .message p, .list-invoice li a, .invoice.edit input, .contact-box .contact-body a, #projectTaskDetails .modal-content .checklist .process-bar-wrapper .process-name, #projectTaskDetails .modal-content .checklist-new-item .checklist-add-controls .icon-close, #projectTaskDetails .modal-content .edit-actions textarea, #projectShareModal .modal-body .form-group .input-wrap .theme-input-style, .board-members-list li a, .board-labels-list li a, .board-labels-select-color li a, #shareModal .modal-content .modal-body .form-group .input-wrap .theme-input-style, .notifications a, .news a, .chip .chip-content .img, .timeline.style--two .event:before, .info-list li a, .about-nav-tab a {
+.main-mail:hover .mail-text .msg, .mail-compose .form-group .cc-btns .cc-btn, .modal-body .form-group .cc-btns .cc-btn, .message p, .list-invoΩice li a, .invoice.edit input, .contact-box .contact-body a, #projectTaskDetails .modal-content .checklist .process-bar-wrapper .process-name, #projectTaskDetails .modal-content .checklist-new-item .checklist-add-controls .icon-close, #projectTaskDetails .modal-content .edit-actions textarea, #projectShareModal .modal-body .form-group .input-wrap .theme-input-style, .board-members-list li a, .board-labels-list li a, .board-labels-select-color li a, #shareModal .modal-content .modal-body .form-group .input-wrap .theme-input-style, .notifications a, .news a, .chip .chip-content .img, .timeline.style--two .event:before, .info-list li a, .about-nav-tab a {
   color: #727272;
-}
+}ƒ
 
 .text_color-bg, .comment-action-links .comment-action-link:not(:last-child):after, .btn-circle.style--three, .sidebar .sidebar-body ul.sub-menu li:before, .switch .control:after, .switch .check, .switch.dark input:checked ~ .control {
   background-color: #727272;
@@ -728,7 +665,7 @@ body,
 
 /* Others */
 .ov-hidden, .main-wrapper, .sidebar {
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .ovx-hidden {
@@ -5225,20 +5162,47 @@ select.multiple option {
 .search-form .theme-input-group.header-search.theme-input-group {
   position: absolute;
   height: 50px;
-  width: 50px;
+  width: 1130px;
   right: 0;
   top: 0;
+}
+@media only screen and (max-width: 1368px) {
+  .search-form .theme-input-group.header-search.theme-input-group {
+    width: 400px; /* Make the search bar full width on smaller screens */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    /*padding: 0 5px; !* Add some padding on the sides *!*/
+    /*left: -100px;*/
+    left: -210px;
+  }
+}
+@media only screen and (max-width: 768px) {
+    .search-form .theme-input-group.header-search.theme-input-group {
+        width: 200px; /* Make the search bar full width on smaller screens */
+        box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+        /*padding: 0 5px; !* Add some padding on the sides *!*/
+        left: -50px;
+    }
+}
+@media only screen and (max-width: 480px) {
+  .search-form .theme-input-group.header-search.theme-input-group {
+    padding: 0 10px; /* Slightly less padding on very small screens */
+  }
+}
+
+.search-form .theme-input-group.header-search.theme-input-group.active {
+  width: 130px;
 }
 
 @media only screen and (max-width: 379px) {
   .search-form .theme-input-group.header-search.theme-input-group {
     height: 45px;
-    width: 45px;
+    margin-left: 20px;
+    width: 200px;
   }
 }
 
 .search-form .theme-input-group.header-search.theme-input-group.active {
-  width: 270px;
+  width: 5px;
 }
 
 .search-form .theme-input-group.header-search.theme-input-group.active button {
@@ -5254,6 +5218,7 @@ select.multiple option {
 @media only screen and (max-width: 379px) {
   .search-form .theme-input-group.header-search.theme-input-group input {
     height: 45px;
+    width: 5px;
   }
 }
 
@@ -5674,22 +5639,24 @@ table.invoice-list.style-two td.custom-radio:nth-child(5) [type="radio"]:not(:ch
    03.1: Header
    ********************* */
 .header {
-  height: 90px;
+  /*height: 140px;*/
 }
 
 .header .main-header {
   -webkit-box-shadow: 15px 1px 15px rgba(0, 0, 0, 0.05);
-  box-shadow: 15px 1px 15px rgba(0, 0, 0, 0.05);
-  padding: 0 15px;
+  /*box-shadow: 15px 1px 15px rgba(0, 0, 0, 0.05);*/
+  /*padding: 0 15px;*/
+  padding : 10px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
-  flex: 1;
+  flex: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -5699,7 +5666,7 @@ table.invoice-list.style-two td.custom-radio:nth-child(5) [type="radio"]:not(:ch
 }
 
 .header .logo {
-  background-color: #fafafa;
+  /*background-color: #fafafa;fafafa*/
   -ms-flex-preferred-size: 260px;
   flex-basis: 260px;
 }
@@ -5718,6 +5685,8 @@ table.invoice-list.style-two td.custom-radio:nth-child(5) [type="radio"]:not(:ch
   }
   .header .logo .mobile-logo {
     display: block;
+    max-width: 100%;
+    width: 62px;
   }
 }
 
@@ -5768,12 +5737,12 @@ body.sidebar-folded.open-sidebar-folded .header .main-header {
 }
 
 .main-header-user .user-profile .user-avatar {
-  margin-right: 20px;
+  /*margin-right: 20px;*/
 }
 
 .main-header-user .user-profile img {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
 }
 
 .main-header-user .user-profile .user-info .user-name {
@@ -5873,15 +5842,20 @@ body.sidebar-folded.open-sidebar-folded .header .main-header {
 }
 
 .main-header-search {
-  position: relative;
+  /*position: relative;*/
   width: 50px;
   height: 50px;
 }
-
+@media  (max-width: 1024px) {
+  .main-header-search {
+    width: 50px;
+    height: 50px;
+  }
+}
 @media only screen and (max-width: 379px) {
   .main-header-search {
     width: 45px;
-    height: 45px;
+    height: 35px;
   }
 }
 
@@ -6082,7 +6056,7 @@ body.sidebar-folded.open-sidebar-folded .header .main-header {
 
 .sidebar .sidebar-body li.nav-category {
   padding: 0;
-  font-size: 17px;
+  font-size: 29px;
   text-transform: capitalize;
   margin: 10px 0 15px;
 }
@@ -6091,7 +6065,7 @@ body.sidebar-folded.open-sidebar-folded .header .main-header {
   position: absolute;
   left: 0;
   top: 7px;
-  font-size: 18px;
+  font-size: 28px;
   color: #aeaeae;
 }
 
@@ -6099,7 +6073,7 @@ body.sidebar-folded.open-sidebar-folded .header .main-header {
   display: block;
   padding: 5px;
   padding-left: 0px;
-  height: 31px;
+  height: 35px;
   overflow: hidden;
 }
 
@@ -6215,11 +6189,12 @@ body.sidebar-open .header .header-toogle-pin {
    03.3: Footer
    ********************* */
 .footer {
-  height: 70px;
-  padding-left: 290px;
+  /*height: 70px;*/
+  /*padding-left: 290px;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -6230,7 +6205,7 @@ body.sidebar-open .header .header-toogle-pin {
 
 @media only screen and (max-width: 1024px) {
   .footer {
-    padding: 0 15px !important;
+    padding: 20px 0 !important;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -6268,18 +6243,24 @@ body.sidebar-folded.open-sidebar-folded .footer {
    03.4: Main Content
    ********************* */
 .main-content {
-  min-height: calc(100vh - 190px);
-  margin-left: 275px;
+  /*min-height: calc(100vh - 190px);*/
+  /*margin-left: 275px;*/
   position: relative;
-  overflow: hidden;
+  /*overflow: hidden;*/
   width: 100%;
   max-width: 100%;
-  margin-top: 120px;
+  margin-top: 150px;
 }
 
 @media only screen and (max-width: 1024px) {
   .main-content {
     margin-left: 0;
+    margin-top: 150px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main-content {
+    margin-top: 100px;
   }
 }
 
@@ -6792,10 +6773,29 @@ body.sidebar-folded .main-content {
 
 /* Product Details */
 .product-details {
-  padding: 30px;
+  /*padding: 30px;*/
 }
-
-/* Product Details Content*/
+.barcode{
+  text-align: center !important;
+}
+.pd-img-wrap img{
+  max-width: 100%;
+  height: auto;
+  width: 300px;
+  padding: 50px;
+}
+@media (max-width: 1024px) {
+  .pd-img-wrap img{
+    width: 100%;
+    padding: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .pd-img-wrap img{
+    padding: 0;
+  }
+}
+  /* Product Details Content*/
 .product-details-content .product_title {
   font-size: 20px;
   margin-bottom: 13px;
@@ -6831,6 +6831,29 @@ body.sidebar-folded .main-content {
 
 .product-details-content .woocommerce-product-details__short-description p:not(:last-child) {
   margin-bottom: 20px;
+}
+.defective-overlay {
+  position: absolute;
+  top: 60%;
+  left: 66%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Ensures the overlay doesn't interfere with clicks */
+}
+
+.defective-overlay img {
+  max-width: 100%;
+  width: 65%;
+  /* Adjust size of defective logo as needed */
+  position: absolute;
+  top: 10px;
+  /* Adjust position of defective logo as needed */
+  left: 10px;
+  /* Adjust position of defective logo as needed */
+  opacity: 0.7;
+  /* Adjust opacity of defective logo as needed */
 }
 
 .list-heading {
@@ -11362,7 +11385,7 @@ select#locale {
 .profile-pic {
   position: relative;
   width: 220px;
-  height: 250px;
+  height: 280px;
   margin-top: -164px;
 }
 
@@ -12371,3 +12394,60 @@ select#locale {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* Default styling for larger screens */
+.item-page-buttons-1 {
+  /*padding-top: 20px;*/
+  /*padding-left: 350px;*/
+}
+@media (max-width: 1024px) {
+
+  .product-activity-btn button{
+    font-size: 12px;
+  }
+
+}
+/* Styling for medium screens (tablets, 768px and up) */
+@media (max-width: 991px) {
+  .item-page-buttons-1 {
+    /*padding-top: 150px;*/
+    /*padding-left: 200px;*/
+  }
+  .product-activity-btn button{
+    font-size: 14px ;
+  }
+  .activity-table table{
+    width: 85% !important;
+  }
+}
+
+/* Styling for small screens (phones, 576px and up) */
+@media (max-width: 767px) {
+  .item-page-buttons-1 {
+    padding: 20px;
+    text-align: center;
+    /*padding-left: 100px;*/
+  }
+  .product-activity-btn button{
+    font-size: 12px;
+  }
+  .activity-table table{
+    width: 100% !important;
+  }
+}
+
+/* Styling for extra small screens (phones, less than 576px) */
+@media (max-width: 575px) {
+  .item-page-buttons-1 {
+    /*padding-top: 50px;*/
+    /*padding-left: 50px;*/
+  }
+}
+
+.custom-small-button {
+  padding: 5px 9px; /* Adjust the padding to make the button smaller */
+  font-size: 11px; /* Adjust the font size */
+  line-height: 1; /* Adjust the line height */
+  border-radius: 3px; /* Adjust the border radius */
+}

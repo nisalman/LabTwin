@@ -82,6 +82,7 @@ jQuery(document).ready(function () {
         }
     });
 
+
 });
 
 
@@ -106,10 +107,54 @@ $('#barCodeNum').submit(function (e) {
     });
 });
 // Close the current modal
-$('#printBarCodeModal').modal('hide');
+// $('#printBarCodeModal').modal('hide');
 
 // Open the new modal
-$('#newModal').modal('show');
+// $('#newModal').modal('show');
+
+
+$('#search').on('keyup', function () {
+
+    var query = $(this).val();
+    // Check if the query is empty
+    if (query.trim() === '') {
+        // If it's empty, clear the content
+        $('#search_list').html('');
+        return; // Exit the function
+    }
+    var testSearchUrl = $('#routeUrls').data('test-search');
+
+    // If the query is not empty, make the AJAX request
+    $.ajax({
+         url: testSearchUrl,
+       // url: "{{route('testSearch', ['any' => 'search']) }}",
+        type: "GET",
+        data: {'search': query},
+        success: function (data) {
+            // Set the search results in the modal body
+            $('#search_list').html(data);
+            // Show the modal
+            $('#searchModal').modal('show');
+        }
+    });
+
+});
+
+
+$(document).ready(function() {
+    $('#bemarkungEdit').click(function() {
+        $('#bemarkungEditTextarea').prop('readonly', false);
+        $('#bemarkungEdit').hide();
+        $('#bemarkungUpdate').show();
+    });
+
+    $('#updateButton').click(function() {
+        $('#exampleTextarea1').prop('readonly', true);
+    });
+});
+
+$('#bemarkungUpdate').hide();
+
 
 
 

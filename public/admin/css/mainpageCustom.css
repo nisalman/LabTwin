@@ -1,0 +1,117 @@
+ body {
+     margin-bottom: 6em;
+ }
+
+.treeview .btn-default {
+    border-color: #e3e5ef;
+}
+
+.treeview .btn-default:hover {
+    background-color: #f7faea;
+    color: #bada55;
+}
+
+.treeview ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.treeview ul li {
+    padding: 50px 0px 0px 35px;
+    position: relative;
+}
+
+.treeview ul li:before {
+    content: "";
+    position: absolute;
+    top: -26px;
+    left: -31px;
+    border-left: 2px dashed #a2a5b5;
+    width: 1px;
+    height: 100%;
+}
+
+.treeview ul li:after {
+    content: "";
+    position: absolute;
+    border-top: 2px dashed #a2a5b5;
+    top: 70px;
+    left: -30px;
+    width: 65px;
+}
+
+.treeview ul li:last-child:before {
+    top: -22px;
+    height: 90px;
+}
+
+.treeview > ul > li:after, .treeview > ul > li:last-child:before {
+    content: unset;
+}
+
+.treeview > ul > li:before {
+    top: 90px;
+    left: 36px;
+}
+
+.treeview > ul > li:not(:last-child) > ul > li:before {
+    content: unset;
+}
+
+.treeview > ul > li > .treeview__level:before {
+    height: 60px;
+    width: 60px;
+    top: -9.5px;
+    background-color: #54a6d9;
+    border: 7.5px solid #d5e9f6;
+    font-size: 22px;
+}
+
+.treeview > ul > li > ul {
+    padding-left: 34px;
+}
+
+.treeview__level {
+    padding: 7px;
+    padding-left: 42.5px;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: 700;
+    border: 1px solid #e3e5ef;
+    position: relative;
+    z-index: 1;
+}
+
+.treeview__level:before {
+    content: attr(data-level);
+    position: absolute;
+    left: -27.5px;
+    top: -6.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: 7.5px solid #eef6d5;
+    background-color: #bada55;
+    color: #fff;
+    font-size: 20px;
+}
+
+.treeview__level[data-level="B"]:before {
+    background-color: #ffcc00; /* Yellow for Building */
+}
+
+.treeview__level[data-level="R"]:before {
+    background-color: #eadf18; /* Blue for Room */
+}
+
+.treeview__level[data-level="P"]:before {
+    background-color: #d451ee; /* Red for Place */
+}
+
+.qr-code-img {
+    border: 5px solid #000; /* Set the border width and color */
+    padding: 5px; /* Add some padding to the QR code */
+}
