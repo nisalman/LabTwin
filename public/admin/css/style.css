@@ -5218,7 +5218,7 @@ select.multiple option {
 @media only screen and (max-width: 379px) {
   .search-form .theme-input-group.header-search.theme-input-group input {
     height: 45px;
-    width: 5px;
+    width: 135px;
   }
 }
 
